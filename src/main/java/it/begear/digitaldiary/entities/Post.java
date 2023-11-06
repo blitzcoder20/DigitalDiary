@@ -1,5 +1,6 @@
 package it.begear.digitaldiary.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,9 @@ public class Post {
 	private long id;
 	
 	private String text;
+	
+	@Column(name = "id_user")
+	private Long idUser;
 
 	public String getText() {
 		return text;
@@ -22,4 +26,13 @@ public class Post {
 	public void setText(String text) {
 		this.text = text;
 	}
+
+	public Long getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
+	
 }

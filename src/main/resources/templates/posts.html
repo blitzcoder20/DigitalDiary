@@ -7,6 +7,14 @@
 <title>Login</title>
 </head>
 <body>
-	<h1>Sei loggato</h1>
+	<form th:action="@{'/create-post/'+${user.id}}" method="post">
+		<input placeholder="Insert text here.." type="text" name="text" id="text">
+		<button type="submit">Send</button>
+	</form>
+	<ul>
+        <li th:each="post : ${posts}">
+            <span th:text="${post.text}"></span>
+        </li>
+    </ul>
 </body>
 </html>

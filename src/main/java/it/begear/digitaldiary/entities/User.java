@@ -2,10 +2,12 @@ package it.begear.digitaldiary.entities;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,8 +31,8 @@ public class User {
 	
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idUser")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_user")
 	private List<Post> posts;
 	
 	public long getId() {
@@ -69,6 +71,8 @@ public class User {
 		this.username = username;
 	}
 
-	
+	public List<Post> getPosts(){
+		return this.posts;
+	}
 	
 }
