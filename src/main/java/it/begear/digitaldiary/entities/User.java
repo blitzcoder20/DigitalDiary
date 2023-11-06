@@ -33,6 +33,10 @@ public class User {
     @JoinColumn(name = "idUser")
 	private List<Post> posts;
 	
+	public long getId() {
+		return id;
+	}
+	
 	public String getName() {
 		return name;
 	}
