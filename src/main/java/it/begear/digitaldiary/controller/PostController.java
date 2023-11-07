@@ -17,6 +17,9 @@ public class PostController {
 	
 	@RequestMapping("create-post/{id}")
 	public String createPost(@PathVariable(name="id") Long userId,@RequestParam("text") String text) {
+		if(text.isBlank()) {
+			return "redirect:/posts";
+		}
 		Post post=new Post();
 		post.setText(text);
 		post.setIdUser(userId);

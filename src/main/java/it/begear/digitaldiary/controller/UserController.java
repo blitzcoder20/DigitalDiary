@@ -50,8 +50,6 @@ public class UserController {
 	@RequestMapping("try-login")
 	public String tryLogin(HttpSession session,@RequestParam("username") String username, @RequestParam("password") String password,RedirectAttributes redirectAttributes) {
 		if(service.login(username,password)) {
-			//User user=service.findByUsername(username);
-			//redirectAttributes.addFlashAttribute("user",user);
 			session.setAttribute("username", username);
 			return "redirect:/posts";
 		}
