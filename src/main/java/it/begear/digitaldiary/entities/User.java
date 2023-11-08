@@ -2,9 +2,7 @@ package it.begear.digitaldiary.entities;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,7 +18,7 @@ import jakarta.persistence.Table;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	private String name;
